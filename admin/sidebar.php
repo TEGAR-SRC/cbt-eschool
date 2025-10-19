@@ -4,7 +4,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" href="#">
-                    <span class="align-middle"><?= htmlspecialchars($pengaturan['nama_aplikasi'] ?? 'CBT E-School') ?></span>
+                    <span class="align-middle"><?= htmlspecialchars($pengaturan['nama_aplikasi'] ?? 'EduPus') ?></span>
                 </a>
 
                 <ul class="sidebar-nav">
@@ -57,6 +57,12 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                     <li class="sidebar-item <?= ($currentPage == 'siswa.php') ? 'active' : '' ?> <?= ($currentPage == 'edit_siswa.php') ? 'active' : '' ?> <?= ($currentPage == 'tambah_siswa.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="siswa.php">
                             <i class="align-middle fas fa-user"></i> <span class="align-middle">Manajemen Siswa</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item <?= ($currentPage == 'admin_management.php') ? 'active' : '' ?> <?= ($currentPage == 'tambah_admin.php') ? 'active' : '' ?> <?= ($currentPage == 'edit_admin.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="admin_management.php">
+                            <i class="align-middle fas fa-user-shield"></i> <span class="align-middle">Manajemen Admin</span>
                         </a>
                     </li>
 

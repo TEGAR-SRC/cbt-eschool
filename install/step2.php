@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conn->exec("USE `$db`");
 
         // Import SQL dari file
-        $sqlFile = file_get_contents(__DIR__ . '/../db/cbt_db.sql');
+        $sqlFile = file_get_contents(__DIR__ . '/../db/edupus_db.sql');
         $conn->exec($sqlFile);
 
         // Simpan info ke session untuk step3
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
       <div class="mb-3">
         <label for="db_name" class="form-label">Nama Database</label>
-        <input type="text" class="form-control" name="db_name" value="cbt_db" required>
+        <input type="text" class="form-control" name="db_name" value="edupus_db" required>
       </div>
       <div class="d-grid">
         <button type="submit" class="btn btn-outline-secondary">Next</button>

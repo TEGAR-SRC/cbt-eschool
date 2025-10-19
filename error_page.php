@@ -47,7 +47,7 @@ session_start();
                             </div>
                             <div class="quote-box">
                                 <p><b>"Jangan menghapus footer, karena setiap bagian dari aplikasi memiliki peran yang penting, bahkan yang tampaknya kecil sekalipun!"</b></p>
-                                <p style="font-size:18px;">--Gludug codelite--</p>
+                                <p style="font-size:18px;">--EduPus--</p>
                             </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" href="#">
-                    <span class="align-middle"><?= htmlspecialchars($pengaturan['nama_aplikasi'] ?? 'CBT E-School') ?></span>
+                    <span class="align-middle"><?= htmlspecialchars($pengaturan['nama_aplikasi'] ?? 'EduPus') ?></span>
                 </a>
 
                 <ul class="sidebar-nav">

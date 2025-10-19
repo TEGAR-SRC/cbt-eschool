@@ -125,7 +125,7 @@ if (!$koneksi) {
                                                         <center><img src="../assets/images/kemdikbud.png" alt="Logo" style="height: 35px;"></center>
                                                         </td>
                                                         <td style="width: 80%; text-align: right; font-size: 12px;">
-                                                            <center><strong>KARTU PESERTA UJIAN CBT</strong><br>
+                                                            <center><strong>KARTU PESERTA UJIAN EduPus</strong><br>
                                                             TAHUN PELAJARAN <?php echo $thn_pelajaran; ?></center>
                                                         </td>
                                                     </tr>
@@ -180,7 +180,7 @@ if (!$koneksi) {
         var element = document.getElementById('canvas_div_pdf');
         html2pdf().set({
             margin: 0.2,
-            filename: 'KartuUjianCbt.pdf',
+            filename: 'KartuUjianEduPus.pdf',
             image: {
                 type: 'jpeg',
                 quality: 1

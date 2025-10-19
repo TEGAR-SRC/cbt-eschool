@@ -1,8 +1,8 @@
-# 📘 Aplikasi CBT eSchool - README
+# 📘 Aplikasi EduPus - README
 
-## Panduan Instalasi Aplikasi CBT eSchool
+## Panduan Instalasi Aplikasi EduPus
 
-Aplikasi CBT eSchool adalah sistem Computer-Based Test berbasis **PHP 8** dan **JavaScript**. Panduan berikut membantu Anda melakukan instalasi di komputer lokal menggunakan **XAMPP**.
+Aplikasi EduPus adalah sistem Computer-Based Test berbasis **PHP 8** dan **JavaScript**. Panduan berikut membantu Anda melakukan instalasi di komputer lokal menggunakan **XAMPP**.
 
 ---
 
@@ -15,16 +15,16 @@ Aplikasi CBT eSchool adalah sistem Computer-Based Test berbasis **PHP 8** dan **
 ---
 
 ### 2. Salin Folder Aplikasi ke `htdocs`
-- Ekstrak folder aplikasi (contoh: `cbt-eschool`)
+- Ekstrak folder aplikasi (contoh: `edupus`)
 - Pindahkan folder ke:  
-  `C:\xampp\htdocs\cbt-eschool`
-- Hapus `File C:\xampp\htdocs\cbt-eschool\koneksi\koneksi.php`
+  `C:\xampp\htdocs\edupus`
+- Hapus `File C:\xampp\htdocs\edupus\koneksi\koneksi.php`
 
 ---
 
 ### 3. Akses Halaman Instalasi
 - Buka browser dan akses:
-`http://localhost/cbt-eschool/install`
+`http://localhost/edupus/install`
 
 
 ---
@@ -32,7 +32,7 @@ Aplikasi CBT eSchool adalah sistem Computer-Based Test berbasis **PHP 8** dan **
 ### 4. Isi Form Database
 - Gunakan data berikut:
 - **Host**: `localhost`
-- **Nama Database**: `cbt_eschool`
+- **Nama Database**: `edupus.id`
 - **Username**: `root`
 - **Password**: *(kosongkan jika default)*
 - Klik **Lanjut / Install**
@@ -58,13 +58,13 @@ Aplikasi CBT eSchool adalah sistem Computer-Based Test berbasis **PHP 8** dan **
 
 ### 7. Hapus Folder `install` (Direkomendasikan)
 - Demi keamanan, hapus folder:  
-`C:\xampp\htdocs\cbt-eschool\install`
+`C:\xampp\htdocs\edupus\install`
 
 ---
 
 ### 8. Akses Aplikasi
 - Gunakan browser dan buka:
-`http://localhost/cbt-eschool`
+`http://localhost/edupus`
 
 
 ---
@@ -112,7 +112,7 @@ Tanda ; menandakan baris tersebut dikomentari. Menghapusnya akan mengaktifkan ek
 ...
 
 
-## 📷 Screenshots Aplikasi CBT eSchool
+## 📷 Screenshots Aplikasi EduPus
 
 ### Dashboard Admin  
 ![Dashboard Admin](https://i.imgur.com/u0IX0Zi.png)
@@ -138,5 +138,5 @@ Tanda ; menandakan baris tersebut dikomentari. Menghapusnya akan mengaktifkan ek
 ### Tampilan Ujian 2  
 ![Tampilan Ujian 2](https://i.imgur.com/0eI7HNK.png)
 
-© 2025 — Dikembangkan oleh **Gludug Codelite**  
+© 2025 — Dikembangkan oleh **EduPus**  
 Semua hak cipta dilindungi undang-undang.

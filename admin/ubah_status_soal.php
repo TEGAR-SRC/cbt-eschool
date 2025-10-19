@@ -16,7 +16,7 @@ $aksi = $_GET['aksi'];
 
 if ($aksi == 'nonaktif') {
     $status = 'Nonaktif';
-    $query = "UPDATE soal SET status = '$status', token = NULL WHERE id_soal = '$id_soal'";
+    $query = "UPDATE soal SET status = '$status' WHERE id_soal = '$id_soal'";
     
     if (mysqli_query($koneksi, $query)) {
         $_SESSION['success'] = 'Soal berhasil dinonaktifkan.';

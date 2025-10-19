@@ -16,6 +16,12 @@ if (isset($_SESSION['siswa_logged_in']) && $_SESSION['siswa_logged_in'] === true
     exit;
 }
 
+// Cek jika admin sudah login, redirect ke admin dashboard
+if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true) {
+    header("Location: ../admin/dashboard.php");
+    exit;
+}
+
 // Tampilkan pesan jika login ganda (token tidak cocok)
 if (isset($_GET['status']) && $_GET['status'] === 'multi') {
     $error = 'Login dibatalkan: akun sedang aktif di perangkat lain.';
@@ -30,10 +36,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_SESSION['captcha']) || strtolower($captcha_input) !== strtolower($_SESSION['captcha'])) {
         $error = 'Captcha salah!';
     } else {
+        // Cek login sebagai siswa
         if (authenticate_user($username, $password, 'siswa')) {
-        unset($_SESSION['captcha']); // hapus captcha
-        header("Location: dashboard.php");
-        exit;
+            unset($_SESSION['captcha']); // hapus captcha
+            header("Location: dashboard.php");
+            exit;
+        } 
+        // Cek login sebagai admin (cross-login)
+        else if (authenticate_user($username, $password, 'admin')) {
+            unset($_SESSION['captcha']); // hapus captcha
+            // Hapus session siswa jika ada
+            unset($_SESSION['siswa_logged_in']);
+            unset($_SESSION['siswa_id']);
+            unset($_SESSION['siswa_username']);
+            unset($_SESSION['siswa_nama']);
+            unset($_SESSION['siswa_kelas']);
+            unset($_SESSION['siswa_nis']);
+            unset($_SESSION['siswa_token']);
+            
+            // Set session admin
+            $_SESSION['admin_logged_in'] = true;
+            $_SESSION['admin_id'] = $_SESSION['user_id'];
+            $_SESSION['admin_username'] = $_SESSION['username'];
+            $_SESSION['admin_nama'] = $_SESSION['nama'];
+            $_SESSION['admin_token'] = $_SESSION['token'];
+            
+            header("Location: ../admin/dashboard.php");
+            exit;
         } else {
             // Cek apakah login gagal karena sesi sudah aktif
             $settings = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT login_ganda FROM pengaturan WHERE id = 1"));

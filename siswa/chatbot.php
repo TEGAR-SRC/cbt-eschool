@@ -1,5 +1,5 @@
 <style>
-#chatbotCBT {
+#chatbotEduPus {
   font-family: "Segoe UI", sans-serif;
   position: fixed;
   bottom: 20px;
@@ -17,19 +17,19 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-#chatbotCBT.minimized {
+#chatbotEduPus.minimized {
   max-height: 48px;
   overflow: visible;
 }
 
-#chatbotCBT.closed {
+#chatbotEduPus.closed {
   opacity: 0;
   pointer-events: none;
   transform: translateY(100px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-#chatbotCBT .header {
+#chatbotEduPus .header {
   background: linear-gradient(135deg,rgb(76, 96, 175),rgb(15, 47, 149));
   color: white;
   padding: 12px 16px;
@@ -41,13 +41,13 @@
   user-select: none;
 }
 
-#chatbotCBT .header i {
+#chatbotEduPus .header i {
   font-size: 18px;
   cursor: default;
 }
 
-#chatbotCBT .header .btn-minimize,
-#chatbotCBT .header .btn-close {
+#chatbotEduPus .header .btn-minimize,
+#chatbotEduPus .header .btn-close {
   background: transparent;
   border: none;
   color: white;
@@ -58,12 +58,12 @@
   user-select: none;
 }
 
-#chatbotCBT .header .btn-minimize:hover,
-#chatbotCBT .header .btn-close:hover {
+#chatbotEduPus .header .btn-minimize:hover,
+#chatbotEduPus .header .btn-close:hover {
   color: rgb(80, 64, 174);
 }
 
-#chatbotCBT .body {
+#chatbotEduPus .body {
   flex: 1;
   padding: 12px;
   overflow-y: auto;
@@ -73,13 +73,13 @@
   background: #f9f9f9;
 }
 
-#chatbotCBT .footer {
+#chatbotEduPus .footer {
   display: flex;
   border-top: 1px solid #eee;
   background: #fff;
 }
 
-#chatbotCBT input {
+#chatbotEduPus input {
   flex: 1;
   padding: 10px 12px;
   border: none;
@@ -87,7 +87,7 @@
   outline: none;
 }
 
-#chatbotCBT button.send-btn {
+#chatbotEduPus button.send-btn {
   background: transparent;
   border: none;
   padding: 0 14px;
@@ -210,21 +210,21 @@
 }
 </style>
 
-<div id="chatbotCBT" class="minimized closed" role="dialog" aria-label="Chatbot Asisten CBT">
+<div id="chatbotEduPus" class="minimized closed" role="dialog" aria-label="Chatbot Asisten EduPus">
   <div class="header">
-    <i class="fa-solid fa-robot"></i> Asisten CBT
+    <i class="fa-solid fa-robot"></i> Asisten EduPus
     <button class="btn-minimize" onclick="event.stopPropagation(); minimizeChatbot()">—</button>
     <button class="btn-close" onclick="event.stopPropagation(); closeChatbot()">✕</button>
   </div>
-  <div class="body" id="cbtBody" style="display:none;">
+  <div class="body" id="edupusBody" style="display:none;">
     <!-- indikator animasi -->
     <div id="typingIndicator" class="bot">
       <span class="typing-dots"><span>.</span><span>.</span><span>.</span></span>
     </div>
   </div>
   <div class="footer" style="display:none;">
-    <input type="text" id="cbtInput" placeholder="Ketik pertanyaan..." onkeydown="if(event.key==='Enter'){sendCBT()}" />
-    <button class="send-btn" onclick="sendCBT()">➤</button>
+    <input type="text" id="edupusInput" placeholder="Ketik pertanyaan..." onkeydown="if(event.key==='Enter'){sendEduPus()}" />
+    <button class="send-btn" onclick="sendEduPus()">➤</button>
   </div>
 </div>
 
@@ -233,19 +233,19 @@
 </div>
 
 <script>
-const chatbot = document.getElementById("chatbotCBT");
+const chatbot = document.getElementById("chatbotEduPus");
 const btnOpen = document.getElementById("btnOpenChatbot");
 const body = chatbot.querySelector(".body");
 const footer = chatbot.querySelector(".footer");
-const input = document.getElementById("cbtInput");
+const input = document.getElementById("edupusInput");
 const typing = document.getElementById("typingIndicator");
 
-let faqCBT = {};
+let faqEduPus = {};
 
 fetch("get_faq.php")
   .then(res => res.json())
   .then(data => {
-    faqCBT = data;
+    faqEduPus = data;
     if (!welcomed) {
       welcomeMessage();
       welcomed = true;
@@ -253,7 +253,7 @@ fetch("get_faq.php")
   });
 
 // Fungsi untuk menambahkan pesan
-function appendCBT(text, sender, delay = 0) {
+function appendEduPus(text, sender, delay = 0) {
   if (sender === "bot" && delay > 0) {
     typing.style.display = "block";
     setTimeout(() => {
@@ -277,9 +277,9 @@ function _append(text, sender) {
 }
 
 function welcomeMessage() {
-  const welcomeText = `Halo! 👋 Saya Asisten CBT.<br>Kamu bisa tanya hal-hal berikut:<br>` +
-    Object.keys(faqCBT).map(k => `- ${k}`).join("<br>");
-  appendCBT(welcomeText, "bot", 500);
+  const welcomeText = `Halo! 👋 Saya Asisten EduPus.<br>Kamu bisa tanya hal-hal berikut:<br>` +
+    Object.keys(faqEduPus).map(k => `- ${k}`).join("<br>");
+  appendEduPus(welcomeText, "bot", 500);
 }
 
 // Fuzzy Matching
@@ -308,16 +308,16 @@ function levenshtein(a, b) {
   return matrix[b.length][a.length];
 }
 
-function sendCBT() {
+function sendEduPus() {
   const text = input.value.trim();
   if (!text) return;
-  appendCBT(text, "user");
+  appendEduPus(text, "user");
 
   const lower = text.toLowerCase();
   let bestMatch = "";
   let bestScore = 0;
 
-  for (const key in faqCBT) {
+  for (const key in faqEduPus) {
     const score = similarity(lower, key);
     if (score > bestScore) {
       bestScore = score;
@@ -327,15 +327,15 @@ function sendCBT() {
 
   let botReply;
   if (bestScore >= 0.6) {
-    botReply = faqCBT[bestMatch];
+    botReply = faqEduPus[bestMatch];
   } else if (bestScore >= 0.3) {
-    botReply = `Mungkin maksud kamu: <b>"${bestMatch}"</b>?<br>👉 ${faqCBT[bestMatch]}`;
+    botReply = `Mungkin maksud kamu: <b>"${bestMatch}"</b>?<br>👉 ${faqEduPus[bestMatch]}`;
   } else {
-    const suggestion = Object.keys(faqCBT).slice(0, 5).map(k => `- ${k}`).join("<br>");
+    const suggestion = Object.keys(faqEduPus).slice(0, 5).map(k => `- ${k}`).join("<br>");
     botReply = "Maaf, saya belum mengerti pertanyaan itu. Coba gunakan kata kunci seperti:<br>" + suggestion;
   }
 
-  appendCBT(botReply, "bot", 1200);
+  appendEduPus(botReply, "bot", 1200);
   input.value = "";
   input.focus();
 }

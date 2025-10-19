@@ -1,8 +1,8 @@
 ===========================================
-    APLIKASI CBT Eschool - README FILE
+    APLIKASI EduPus - README FILE
 ===========================================
 
-Panduan Instalasi Aplikasi CBT eSchool
+Panduan Instalasi Aplikasi EduPus
 ===========================================
 
 Aplikasi ini dibuat menggunakan PHP 8 dan JavaScript.
@@ -18,21 +18,21 @@ Ikuti langkah-langkah berikut untuk melakukan instalasi di komputer lokal Anda m
 
 2. Salin Folder Aplikasi ke htdocs
 ----------------------------------
-- Ekstrak folder aplikasi CBT eSchool (misalnya: cbt-eschool)
+- Ekstrak folder aplikasi EduPus (misalnya: edupus)
 - Salin folder tersebut ke direktori:
-  C:\xampp\htdocs\cbt-eschool
-- Hapus File C:\xampp\htdocs\cbt-eschool\koneksi\koneksi.php
+  C:\xampp\htdocs\edupus
+- Hapus File C:\xampp\htdocs\edupus\koneksi\koneksi.php
 
 3. Akses Halaman Instalasi
 --------------------------
 - Buka browser dan akses:
-  http://localhost/cbt-eschool/install
+  http://localhost/edupus/install
 
 4. Isi Form Database
 --------------------
 - Masukkan informasi database sebagai berikut:
   - Host: localhost
-  - Nama Database: cbt_eschool
+  - Nama Database: edupus.id
   - Username: root
   - Password: (kosongkan jika default)
 - Klik tombol "Lanjut" atau "Install"
@@ -55,17 +55,17 @@ Ikuti langkah-langkah berikut untuk melakukan instalasi di komputer lokal Anda m
 7. Hapus Folder install (DIREKOMENDASIKAN)
 ------------------------------------------
 - Demi keamanan, hapus folder "install" dari:
-  C:\xampp\htdocs\cbt-eschool\install
+  C:\xampp\htdocs\edupus\install
 
 8. Akses Aplikasi
 -----------------
 - Gunakan browser dan buka:
-  http://localhost/cbt-eschool
+  http://localhost/edupus
 
 ===========================================
-Selamat menggunakan Aplikasi CBT eSchool!
+Selamat menggunakan Aplikasi EduPus!
 ===========================================
 
 Copyright © 2025
-Dikembangkan oleh Gludug Codelite
+Dikembangkan oleh EduPus
 Semua hak cipta dilindungi undang-undang.

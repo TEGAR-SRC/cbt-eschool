@@ -21,8 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     }
 
-    $query = "INSERT INTO soal (kode_soal, nama_soal, mapel, kelas, waktu_ujian, tampilan_soal, tanggal)
-              VALUES ('$kode_soal', '$nama_soal', '$mapel', '$kelas', '$waktu_ujian', '$tampilan_soal', '$tanggal')";
+    // Generate token 6 digit
+    $token = str_pad(mt_rand(0, 999999), 6, '0', STR_PAD_LEFT);
+    
+    $query = "INSERT INTO soal (kode_soal, nama_soal, mapel, kelas, waktu_ujian, tampilan_soal, tanggal, status, kunci, token)
+              VALUES ('$kode_soal', '$nama_soal', '$mapel', '$kelas', '$waktu_ujian', '$tampilan_soal', '$tanggal', 'Aktif', '', '$token')";
 
     if (mysqli_query($koneksi, $query)) {
         $_SESSION['success'] = 'Soal berhasil ditambahkan.';

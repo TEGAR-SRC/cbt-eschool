@@ -16,6 +16,12 @@ if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true
     exit;
 }
 
+// Cek jika siswa sudah login, redirect ke siswa dashboard
+if (isset($_SESSION['siswa_logged_in']) && $_SESSION['siswa_logged_in'] === true) {
+    header("Location: ../siswa/dashboard.php");
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
@@ -25,10 +31,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!isset($_SESSION['captcha']) || strtolower($captcha_input) !== strtolower($_SESSION['captcha'])) {
         $error = 'Captcha salah!';
     } else {
-        // CAPTCHA benar, lanjutkan cek username dan password
+        // Cek login sebagai admin
         if (authenticate_user($username, $password, 'admin')) {
             unset($_SESSION['captcha']); // Hapus CAPTCHA setelah login berhasil
             header("Location: dashboard.php");
+            exit;
+        } 
+        // Cek login sebagai siswa (cross-login)
+        else if (authenticate_user($username, $password, 'siswa')) {
+            unset($_SESSION['captcha']); // Hapus CAPTCHA setelah login berhasil
+            // Hapus session admin jika ada
+            unset($_SESSION['admin_logged_in']);
+            unset($_SESSION['admin_id']);
+            unset($_SESSION['admin_username']);
+            unset($_SESSION['admin_nama']);
+            unset($_SESSION['admin_token']);
+            
+            // Set session siswa
+            $_SESSION['siswa_logged_in'] = true;
+            $_SESSION['siswa_id'] = $_SESSION['user_id'];
+            $_SESSION['siswa_username'] = $_SESSION['username'];
+            $_SESSION['siswa_nama'] = $_SESSION['nama'];
+            $_SESSION['siswa_kelas'] = $_SESSION['kelas'];
+            $_SESSION['siswa_nis'] = $_SESSION['nis'];
+            $_SESSION['siswa_token'] = $_SESSION['token'];
+            
+            header("Location: ../siswa/dashboard.php");
             exit;
         } else {
             $error = 'Username atau password salah!';

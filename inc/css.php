@@ -3,6 +3,7 @@
 <link href="../assets/fontawesome/css/all.min.css" rel="stylesheet">
 <link href="../assets/adminkit/static/css/app.css" rel="stylesheet">
 <link href="../assets/datatables/datatables.css" rel="stylesheet">
+<link href="../assets/css/custom-theme.css" rel="stylesheet">
 <style>
   #toast-container {
     position: fixed !important;

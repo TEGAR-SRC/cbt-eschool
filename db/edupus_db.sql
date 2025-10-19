@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Jun 2025 pada 14.54
+-- Waktu pembuatan: 17 Sep 2025 pada 12.47
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cbt_db`
+-- Database: `edupus_db`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `username`, `nama_admin`, `password`, `created_at`) VALUES
-(1, 'gludug', 'Betara', '$2y$10$v6Q.D8Fv5iBQdeHKBpvmyODECjT28ShK34J0nw0ExFLFwkWvQvZO6', '2025-05-05 09:13:31');
+(1, 'admin', 'EduPus Admin', '$2y$10$v6Q.D8Fv5iBQdeHKBpvmyODECjT28ShK34J0nw0ExFLFwkWvQvZO6', '2025-01-01 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -170,7 +170,7 @@ CREATE TABLE `pengaturan` (
 --
 
 INSERT INTO `pengaturan` (`id`, `nama_aplikasi`, `logo_sekolah`, `warna_tema`, `waktu_sinkronisasi`, `sembunyikan_nilai`, `login_ganda`, `chat`, `versi_aplikasi`) VALUES
-(1, 'CBT-Eschool', 'logo_1747650742.png', '#2f90c1', 60, 0, 'izinkan', 'izinkan', '1.1.5');
+(1, 'CBT-Eschool', 'logo_1747650742.png', '#2f90c1', 60, 0, 'izinkan', 'izinkan', '1.1.7');
 
 -- --------------------------------------------------------
 
@@ -203,7 +203,7 @@ CREATE TABLE `siswa` (
   `username` varchar(200) NOT NULL,
   `kelas` varchar(100) NOT NULL,
   `rombel` varchar(100) NOT NULL,
-  `status` text NOT NULL DEFAULT 'Nonaktif',
+  `status` text NOT NULL,
   `session_token` varchar(255) NOT NULL,
   `last_activity` datetime DEFAULT NULL,
   `page_url` text NOT NULL,
@@ -237,8 +237,8 @@ CREATE TABLE `soal` (
   `mapel` varchar(100) NOT NULL,
   `kelas` varchar(50) NOT NULL,
   `waktu_ujian` int(11) DEFAULT 60,
-  `tanggal` date DEFAULT curdate(),
-  `status` text NOT NULL DEFAULT 'Nonaktif',
+  `tanggal` date,
+  `status` text NOT NULL,
   `tampilan_soal` varchar(10) NOT NULL,
   `kunci` text NOT NULL,
   `token` varchar(6) NOT NULL

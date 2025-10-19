@@ -4,7 +4,7 @@ include '../koneksi/koneksi.php';
 include '../inc/functions.php';
 check_login('admin');
 
-$key = 'cbteschool@#12345';
+$key = 'edupus.id@#12345';
 
 function encrypt_data($data, $key) {
     $iv = openssl_random_pseudo_bytes(16);

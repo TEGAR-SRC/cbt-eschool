@@ -170,6 +170,11 @@ if ($data_soal['status'] == 'Aktif') {
                                                         <i class="fas fa-upload"></i> Import Soal Excel
                                                     </a>
                                                 </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="import_word.php?kode_soal=<?php echo urlencode($kode_soal); ?>">
+                                                        <i class="fas fa-file-word"></i> Import Soal Word
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
 

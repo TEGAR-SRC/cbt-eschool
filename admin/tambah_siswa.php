@@ -27,8 +27,8 @@ if (isset($_POST['submit'])) {
     $final = base64_encode($iv . $encrypted);
 
     // Simpan ke database
-    $query = "INSERT INTO siswa (nama_siswa, username, password, kelas, rombel)
-              VALUES ('$nama', '$username', '$final', '$kelas', '$rombel')";
+    $query = "INSERT INTO siswa (nama_siswa, username, password, kelas, rombel, status, session_token, page_url)
+              VALUES ('$nama', '$username', '$final', '$kelas', '$rombel', 'Aktif', '', '')";
     mysqli_query($koneksi, $query);
 
     $_SESSION['success'] = 'Berhasil menambahkan siswa.';

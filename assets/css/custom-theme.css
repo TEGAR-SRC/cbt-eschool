@@ -1,0 +1,625 @@
+/* Darker Green Theme */
+:root {
+    --primary-color: #4dd15a;
+    --secondary-color: #2b5f56;
+    --primary-hover: #3bb849;
+    --secondary-hover: #1a3d36;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+    color: white !important;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #000 !important;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover) !important;
+    border-color: var(--secondary-hover) !important;
+    color: #000 !important;
+}
+
+/* Card Headers */
+.card-header {
+    background-color: #4dd15a !important;
+    color: white !important;
+}
+
+.card-header h1, .card-header h2, .card-header h3, .card-header h4, .card-header h5, .card-header h6 {
+    color: white !important;
+    text-shadow: none !important;
+}
+
+.card-header .card-title {
+    color: white !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+}
+
+/* Force all text in card header to be white */
+.card-header * {
+    color: white !important;
+    text-shadow: none !important;
+}
+
+.card-header strong {
+    color: white !important;
+    font-weight: bold !important;
+    text-shadow: none !important;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #4dd15a !important;
+}
+
+/* Force primary color for all main elements */
+.btn-primary, .card-header, .table thead th, .navbar-bg {
+    background-color: #4dd15a !important;
+    border-color: #4dd15a !important;
+}
+
+/* Override any existing styles */
+*[style*="background-color"] {
+    background-color: #4dd15a !important;
+}
+
+/* Force table header color - Blue theme */
+.table thead th {
+    background-color: #3b82f6 !important;
+    color: white !important;
+    border-color: #3b82f6 !important;
+}
+
+/* Nuclear option - force all elements to use primary color (EXCEPT table headers) */
+.btn, .card-header, .navbar, .sidebar, 
+[class*="btn-primary"], [class*="card-header"] {
+    background-color: #4dd15a !important;
+    border-color: #4dd15a !important;
+}
+
+/* Override any inline styles - but not for specific elements */
+*[style*="background-color"]:not(.table thead th):not(.btn-success):not(.btn-info):not(.btn-warning):not(.btn-danger):not(.btn-secondary) {
+    background-color: #4dd15a !important;
+}
+
+/* Force all buttons with primary class */
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #4dd15a !important;
+    border-color: #4dd15a !important;
+    color: white !important;
+}
+
+/* Force ALL buttons to be visible */
+.btn, .btn:hover, .btn:focus, .btn:active, .btn:visited {
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+/* Specific button types with different colors */
+.btn-success {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+.btn-info {
+    background-color: #06b6d4 !important;
+    border-color: #06b6d4 !important;
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+.btn-warning {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+.btn-danger {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+.btn-secondary {
+    background-color: #6b7280 !important;
+    border-color: #6b7280 !important;
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+/* Override any button styling */
+button, input[type="button"], input[type="submit"], input[type="reset"] {
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+/* Force button text visibility */
+.btn * {
+    color: white !important;
+    text-shadow: none !important;
+}
+
+/* Nuclear option for all buttons */
+*[class*="btn"], *[class*="button"], button, input[type="button"], input[type="submit"], input[type="reset"], a[class*="btn"] {
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+    background-color: #4dd15a !important;
+    border-color: #4dd15a !important;
+}
+
+/* Override any existing button styles */
+.btn, .btn:not(:disabled):not(.disabled) {
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+/* Force visibility for all button states */
+.btn:hover, .btn:focus, .btn:active, .btn:visited, .btn:link {
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+}
+
+/* Ultimate button fix - override everything EXCEPT specific button types */
+button:not(.btn-success):not(.btn-info):not(.btn-warning):not(.btn-danger):not(.btn-secondary), 
+.btn:not(.btn-success):not(.btn-info):not(.btn-warning):not(.btn-danger):not(.btn-secondary), 
+[class*="btn"]:not(.btn-success):not(.btn-info):not(.btn-warning):not(.btn-danger):not(.btn-secondary), 
+[class*="button"]:not(.btn-success):not(.btn-info):not(.btn-warning):not(.btn-danger):not(.btn-secondary), 
+input[type="button"]:not(.btn-success):not(.btn-info):not(.btn-warning):not(.btn-danger):not(.btn-secondary), 
+input[type="submit"]:not(.btn-success):not(.btn-info):not(.btn-warning):not(.btn-danger):not(.btn-secondary), 
+input[type="reset"]:not(.btn-success):not(.btn-info):not(.btn-warning):not(.btn-danger):not(.btn-secondary), 
+a[class*="btn"]:not(.btn-success):not(.btn-info):not(.btn-warning):not(.btn-danger):not(.btn-secondary) {
+    color: white !important;
+    text-shadow: none !important;
+    font-weight: 600 !important;
+    background-color: #4dd15a !important;
+    border-color: #4dd15a !important;
+}
+
+/* Force all button content to be white */
+button *, .btn *, [class*="btn"] *, [class*="button"] * {
+    color: white !important;
+    text-shadow: none !important;
+}
+
+/* Override any inline styles on buttons */
+button[style], .btn[style], [class*="btn"][style] {
+    color: white !important;
+    background-color: #4dd15a !important;
+    border-color: #4dd15a !important;
+}
+
+/* Force specific button colors with higher specificity */
+.btn[title*="Preview"], .btn[title*="Edit"], .btn[title*="Duplikat"] {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+.btn[title*="Input"], .btn[title*="Tambah"] {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+.btn[title*="Aktifkan"], .btn[title*="Activate"] {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+.btn[title*="Hapus"], .btn[title*="Delete"] {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Force button colors by aria-label */
+.btn[aria-label*="Preview"], .btn[aria-label*="Edit"], .btn[aria-label*="Duplikat"] {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+.btn[aria-label*="Input"], .btn[aria-label*="Tambah"] {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+.btn[aria-label*="Aktifkan"], .btn[aria-label*="Activate"] {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+.btn[aria-label*="Hapus"], .btn[aria-label*="Delete"] {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Ultimate specificity override for specific buttons */
+.btn.btn-sm[style*="background-color"]:not([style*="background-color: #3b82f6"]):not([style*="background-color: #10b981"]):not([style*="background-color: #f59e0b"]):not([style*="background-color: #ef4444"]) {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* Force specific button colors with maximum specificity */
+.btn.btn-sm:not(.btn-danger):not(.btn-success):not(.btn-warning):not(.btn-info):not(.btn-secondary) {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* Override any green buttons that should be blue */
+.btn[style*="background-color: #4dd15a"], .btn[style*="background-color: #5ae16c"] {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* Force blue for Preview, Edit, Duplikat buttons */
+.btn:contains("Preview"), .btn:contains("Edit"), .btn:contains("Duplikat") {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* Force green for Input Soal button */
+.btn:contains("Input Soal"), .btn:contains("Tambah") {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+/* Force orange for Aktifkan button */
+.btn:contains("Aktifkan"), .btn:contains("Activate") {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+/* Nuclear option - force all small buttons to be blue except specific ones */
+.btn.btn-sm:not(:contains("Input Soal")):not(:contains("Tambah")):not(:contains("Aktifkan")):not(:contains("Activate")):not(:contains("Hapus")):not(:contains("Delete")) {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* Override for specific button types */
+.btn.btn-sm.btn-success, .btn.btn-sm:contains("Input Soal"), .btn.btn-sm:contains("Tambah") {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+.btn.btn-sm.btn-warning, .btn.btn-sm:contains("Aktifkan"), .btn.btn-sm:contains("Activate") {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+.btn.btn-sm.btn-danger, .btn.btn-sm:contains("Hapus"), .btn.btn-sm:contains("Delete") {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Force all buttons in table to be blue by default */
+table .btn {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* Override for specific buttons in table */
+table .btn:contains("Input Soal"), table .btn:contains("Tambah") {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+table .btn:contains("Aktifkan"), table .btn:contains("Activate") {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+table .btn:contains("Hapus"), table .btn:contains("Delete") {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Ultimate fix - override ALL green buttons */
+.btn[style*="background-color: #4dd15a"], 
+.btn[style*="background-color: #5ae16c"], 
+.btn[style*="background-color: #10b981"]:not(:contains("Input Soal")):not(:contains("Tambah")) {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* Force all buttons to be blue by default EXCEPT specific ones */
+.btn:not(.btn-danger):not(.btn-success):not(.btn-warning):not(.btn-info):not(.btn-secondary):not(:contains("Input Soal")):not(:contains("Tambah")):not(:contains("Aktifkan")):not(:contains("Activate")):not(:contains("Hapus")):not(:contains("Delete")) {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* Override for specific button text content with higher specificity */
+.btn:contains("Preview"), .btn:contains("Edit"), .btn:contains("Duplikat") {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+.btn:contains("Input Soal"), .btn:contains("Tambah") {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+.btn:contains("Aktifkan"), .btn:contains("Activate") {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+.btn:contains("Hapus"), .btn:contains("Delete") {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Force specific colors with maximum specificity */
+.btn.btn-sm:contains("Input Soal"), .btn.btn-sm:contains("Tambah") {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+.btn.btn-sm:contains("Aktifkan"), .btn.btn-sm:contains("Activate") {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+.btn.btn-sm:contains("Hapus"), .btn.btn-sm:contains("Delete") {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Force table buttons to have specific colors */
+table .btn:contains("Input Soal"), table .btn:contains("Tambah") {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+table .btn:contains("Aktifkan"), table .btn:contains("Activate") {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+table .btn:contains("Hapus"), table .btn:contains("Delete") {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Ultimate fix for Hapus button - override everything */
+.btn:contains("Hapus"), .btn:contains("Delete"), 
+.btn[title*="Hapus"], .btn[title*="Delete"],
+.btn[aria-label*="Hapus"], .btn[aria-label*="Delete"],
+.btn.btn-sm:contains("Hapus"), .btn.btn-sm:contains("Delete"),
+table .btn:contains("Hapus"), table .btn:contains("Delete") {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Force red for any button with X icon or delete-related text */
+.btn i.fa-times, .btn i.fa-trash, .btn i.fa-x,
+.btn[class*="delete"], .btn[class*="hapus"] {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Nuclear option for Hapus button - override ALL other rules */
+.btn:contains("Hapus"), .btn:contains("Delete") {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Force red for buttons with X icon */
+.btn:has(i.fa-times), .btn:has(i.fa-trash), .btn:has(i.fa-x) {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Override any inline styles for Hapus buttons */
+.btn[style*="background-color"]:contains("Hapus"),
+.btn[style*="background-color"]:contains("Delete") {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Force table header to stay blue */
+.table thead th[style*="background-color"] {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+/* Specific button colors based on function */
+.btn-preview, .btn-edit, .btn-duplicate {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+.btn-add, .btn-input {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+.btn-delete, .btn-hapus {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+.btn-activate, .btn-aktifkan {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+/* Force specific button colors by text content */
+.btn:contains("Preview"), .btn:contains("Edit"), .btn:contains("Duplikat") {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+.btn:contains("Input Soal"), .btn:contains("Tambah") {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    color: white !important;
+}
+
+.btn:contains("Aktifkan"), .btn:contains("Activate") {
+    background-color: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: white !important;
+}
+
+.btn:contains("Hapus"), .btn:contains("Delete") {
+    background-color: #ef4444 !important;
+    border-color: #ef4444 !important;
+    color: white !important;
+}
+
+/* Pagination buttons */
+.pagination .page-link {
+    background-color: #6b7280 !important;
+    border-color: #6b7280 !important;
+    color: white !important;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    color: white !important;
+}
+
+.sidebar .sidebar-brand {
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+.sidebar .sidebar-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.sidebar .sidebar-link:hover {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.sidebar .sidebar-item.active .sidebar-link {
+    background-color: var(--secondary-color) !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+}
+
+.sidebar .sidebar-header {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 600 !important;
+}
+
+/* Navbar */
+.navbar-bg {
+    background-color: var(--primary-color) !important;
+}
+
+/* Form Controls */
+.form-control:focus {
+    border-color: var(--secondary-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(90, 225, 108, 0.25) !important;
+}
+
+/* Links */
+a {
+    color: var(--primary-color) !important;
+}
+
+a:hover {
+    color: var(--primary-hover) !important;
+}
+
+/* Badges */
+.badge-primary {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+.badge-secondary {
+    background-color: var(--secondary-color) !important;
+    color: #000 !important;
+}
+
+/* Progress Bars */
+.progress-bar {
+    background-color: var(--secondary-color) !important;
+}
+
+/* Alerts */
+.alert-primary {
+    background-color: rgba(43, 95, 86, 0.1) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+.alert-secondary {
+    background-color: rgba(90, 225, 108, 0.1) !important;
+    border-color: var(--secondary-color) !important;
+    color: #000 !important;
+}

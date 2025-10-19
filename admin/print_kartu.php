@@ -128,7 +128,7 @@ if (mysqli_num_rows($result) > 0):
                 <center><img src="../assets/images/kemdikbud.png" alt="Logo" style="height: 35px;"></center>
                 </td>
                 <td style="width: 80%; text-align: center; vertical-align: middle; font-size: 12px;">
-                <center><strong>KARTU PESERTA UJIAN CBT</strong><br>
+                <center><strong>KARTU PESERTA UJIAN EduPus</strong><br>
                     TAHUN PELAJARAN <?php echo $thn_pelajaran; ?></center>
                 </td>
             </tr>
@@ -179,7 +179,7 @@ endif;
         var element = document.getElementById('canvas_div_pdf');
         html2pdf().set({
             margin: 0.2,
-            filename: 'KartuUjianCbt.pdf',
+            filename: 'KartuUjianEduPus.pdf',
             image: { type: 'jpeg', quality: 1 },
             html2canvas: { scale: 2, logging: false },
             jsPDF: { unit: 'in', format: 'a4', orientation: 'landscape' }
